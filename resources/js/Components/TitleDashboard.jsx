@@ -2,7 +2,7 @@ import React from "react";
 
 const TitleDashboard = (props) => {
     return (
-        <div className="w-full h-fit">
+        <div className="w-full h-fit mt-8">
             <div>
                 <h2 className="text-xl font-bold text-black">{props.Title}</h2>
             </div>

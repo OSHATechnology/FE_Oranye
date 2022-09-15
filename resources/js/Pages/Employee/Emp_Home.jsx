@@ -60,7 +60,7 @@ const CardStatusAttendance = () => {
 const CardRequest = () => {
     return (
         <div className="">
-            <div className="flex flex-col w-full md:w-full border border-gray-300 shadow rounded p-2">
+            <div className="container flex flex-col w-full md:w-full border border-gray-300 shadow rounded p-2">
                 <div className="text-center my-4">
                     <p className="text-base text-black">
                         Leave & Overtime Request
@@ -101,18 +101,19 @@ const CardRequest = () => {
 
 export default function Emp_Home() {
     return (
-        <div className="flex w-screen md:w-full justify-center items-center space  md:mt-4">
-            <div className="md:grid md:grid-cols-2">
-                <div className="w-full justify-center">
+
+        <div className="flex justify-center">
+            <div className=" items-start justify-center w-screen md:min-h-1/3 md:flex md:flex-row md:w-4/5 mt-4">
+            <div className="md:grid md:grid-cols-2 space-y-4 md:space-y-0">
+                <div className="w-full justify-center ">
                     <CardProfileEmployee />
                 </div>
-                <div className="w-full justify-center ">
+                <div className="w-full justify-center space-y-4 md:space-y-0">
                     <CardStatusAttendance />
                     <CardRequest />
                 </div>
-
+                </div>
             </div>
-
-        </div>
+            </div>
     );
 }
