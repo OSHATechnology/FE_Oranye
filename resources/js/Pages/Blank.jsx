@@ -6,9 +6,11 @@ import Role from "@/Pages/Dashboard/RolePermissions";
 import Hadir from "@/Pages/Dashboard/Attendance";
 import Emp from "@/Pages/Dashboard/Employee";
 import Mitra from "@/Pages/Dashboard/Partner";
+import Detail from "@/Pages/Dashboard/EmployeeDetail";
 import Today from "./Dashboard/Attendance/Today";
 import Overtime from "./Dashboard/Attendance/Overtime";
 import Attendance from "@/Pages/Dashboard/Attendance/Attendance";
+import ModalDelete from "@/Components/Modal/ModalDelete"
 
 
 export default function Blank() {
@@ -17,7 +19,7 @@ export default function Blank() {
     // console.log('search', location.search);
     return (
         <div className="flex">
-
+            {/* <ModalDelete /> */}
             <BrowserRouter>
                 <Sidebar />
 
@@ -31,6 +33,7 @@ export default function Blank() {
                     </Route>
                     <Route path="emp" element={<Emp />} />
                     <Route path="mitra" element={<Mitra />} />
+                    <Route path="detail" element={<Detail />} />
                 </Routes>
 
             </BrowserRouter>

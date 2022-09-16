@@ -4,7 +4,7 @@ const TitleDashboard = (props) => {
     return (
         <div className="w-full h-fit mt-8">
             <div>
-                <h2 className="text-xl font-bold text-black">{props.Title}</h2>
+                <h2 className="text-2xl font-extrabold text-black">{props.Title}</h2>
             </div>
             <div>
                 <p className="text-xs font-medium text-gray-400">{props.Keterangan}</p>

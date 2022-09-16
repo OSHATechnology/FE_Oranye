@@ -1,20 +1,22 @@
-import React from 'react'
+import React, { useState } from 'react'
 import ButtonSmall from "@/Components/ButtonSmall";
 import SimpleCard from "@/Components/SimpleCard";
-import { Icon } from "@iconify/react";
+
+import Modal from "@/Components/Modal/ModalAttendance";
 
 const Overtime = () => {
+    const [isOpen, setIsOpen] = useState(false)
     const dataOvertime = [
       {
         id: "1",
-        img: "assets/PP.png",
+        img: "../assets/PP.png",
         name: "Tatang Suherman",
         hour: "2",
         acc: "Tatang Suherman"
       },
       {
         id: "2",
-        img: "assets/Logo.png",
+        img: "../assets/Logo.png",
         name: "Arunika",
         hour: "Work",
         acc: "Lead"
@@ -59,7 +61,7 @@ const Overtime = () => {
                       <tbody className='text-xs font-medium text-gray-700 md:text-sm'>
                         {dataOvertime.map((row,index) => (
                           
-                          <tr>
+                          <tr key={row.id}>
                               <td>{index + 1}</td>
                               <td>
                                   <div className="flex items-center justify-center">
@@ -79,7 +81,8 @@ const Overtime = () => {
                               <td>{row.acc}</td>
                               <td>
                                 
-                                  <ButtonSmall bgIcon="bg-blue-500" icon="carbon:view"/>
+                                  <ButtonSmall bg="bg-blue-500" icon="carbon:view" onClick={() => setIsOpen(!isOpen)}/>
+                                  <Modal isOpen={isOpen} setIsOpen={setIsOpen} title="Info Detail"/>
                               </td>
                           </tr>
                         ))}

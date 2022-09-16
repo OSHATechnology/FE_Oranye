@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import TitleDashboard from "@/Components/TitleDashboard";
 import ButtonSmall from "@/Components/ButtonSmall";
 import ButtonNormal from "@/Components/ButtonNormal";
+import Modal from "@/Components/Modal/ModalDetailPartner";
 
 const Partner = () => {
+    const [isOpen, setIsOpen] = useState(false)
     const dataPartner = [
         // Pages
         {
@@ -32,7 +34,7 @@ const Partner = () => {
             <div className="flex justify-center mt-8 mb-2">
                 <div className="justify-between items-center md:min-h-1/3 md:flex md:flex-row md:w-full">
                     <div className="">
-                        <ButtonNormal bgIcon="bg-green-600 " text="Add" icon="bi:plus" />
+                        <ButtonNormal bg="bg-green-600 " text="Add" icon="bi:plus" />
                     </div>
                     <div className="flex space-x-2 items-center">
                         <input
@@ -41,7 +43,7 @@ const Partner = () => {
                             className="rounded border border-gray-300 h-9 text-center w-72"
                         />
                         <ButtonSmall
-                            bgIcon="bg-gray-400"
+                            bg="bg-gray-400"
                             icon="akar-icons:search"
                             colorIcon="text-white"
                         />
@@ -81,20 +83,23 @@ const Partner = () => {
                                     <td>
                                         <div className="flex justify-center gap-1">
                                             <ButtonSmall
-                                                bgIcon="bg-blue-600"
+                                                bg="bg-blue-600"
                                                 icon="carbon:view"
                                                 colorIcon="text-white"
+                                                onClick={() => setIsOpen(!isOpen)}
                                             />
                                             <ButtonSmall
-                                                bgIcon="bg-yellow-500"
+                                                bg="bg-yellow-500"
                                                 icon="fa6-solid:pen-to-square"
                                                 colorIcon="text-white"
                                             />
                                             <ButtonSmall
-                                                bgIcon="bg-red-500"
+                                                bg="bg-red-500"
                                                 icon="ci:trash-full"
                                                 colorIcon="text-white"
+                                                onClick={() => setIsOpen(!isOpen)}
                                             />
+                                            <Modal isOpen={isOpen} setIsOpen={setIsOpen} title="Detail Partner"/>
                                         </div>
                                     </td>
                                 </tr>

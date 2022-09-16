@@ -52,6 +52,14 @@ const Sidebar = () => {
             isActive: false,
             classAddon: "",
         },
+        {
+            id: 6,
+            icon: "carbon:update-now",
+            title: "Detail Employee",
+            link: "detail",
+            isActive: false,
+            classAddon: "",
+        },
     ];
 
     return (

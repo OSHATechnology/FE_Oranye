@@ -38,7 +38,7 @@ const RolePermissions = () => {
                     <div className="flex justify-between items-center ">
                         <div>
                             <ButtonNormal
-                                bgIcon="bg-green-600 "
+                                bg="bg-green-600 "
                                 icon="akar-icons:plus"
                                 text="Add"
                             />
@@ -66,7 +66,7 @@ const RolePermissions = () => {
                                     <td>
                                         <div className="flex justify-center text-center">
                                             <ButtonNormal
-                                                bgIcon="bg-blue-500 "
+                                                bg="bg-blue-500 "
                                                 text="details"
                                             />
                                         </div>
@@ -99,13 +99,13 @@ const RolePermissions = () => {
                             <tbody>
                                 {dataRole.map((row, index) =>(
 
-                                <tr>
+                                <tr key={row.id}>
                                     <td>{index + 1}</td>
                                     <td>{row.role}</td>
                                     <td>
                                         <div className="flex justify-center text-center">
                                             <ButtonNormal
-                                                bgIcon="bg-blue-500 "
+                                                bg="bg-blue-500 "
                                                 text="details"
                                             />
                                         </div>

@@ -1,13 +1,15 @@
 import ButtonSmall from "@/Components/ButtonSmall";
 import SimpleCard from "@/Components/SimpleCard";
 import { Icon } from "@iconify/react";
-import React from "react";
+import React, { useState } from "react";
+import Modal from "@/Components/Modal/ModalAttendance";
 
 const Today = () => {
+    const [isOpen, setIsOpen] = useState(false)
     const dataToday = [
         {
             id: "1",
-            img: "assets/PP.png",
+            img: "../assets/PP.png",
             name: "Tatang Suherman",
             icon: "bi:airplane-engines-fill",
             type: "furlough",
@@ -15,7 +17,7 @@ const Today = () => {
         },
         {
             id: "2",
-            img: "assets/Logo.png",
+            img: "../assets/Logo.png",
             name: "Arunika",
             icon: "ic:baseline-work",
             type: "Work",
@@ -66,7 +68,7 @@ const Today = () => {
                     </thead>
                     <tbody className="text-xs font-medium text-gray-700 md:text-sm">
                         {dataToday.map((row, index) => (
-                            <tr>
+                            <tr key={row.id}>
                                 <td>{index + 1}</td>
                                 <td>
                                     <div className="flex items-center justify-center">
@@ -91,10 +93,11 @@ const Today = () => {
                                 <td>{row.email}</td>
                                 <td>
                                     <ButtonSmall
-                                        bgIcon="bg-blue-500"
+                                        bg="bg-blue-500"
                                         icon="carbon:view"
+                                        onClick={() => setIsOpen(!isOpen)}
                                     />
-                                    
+                                    <Modal isOpen={isOpen} setIsOpen={setIsOpen} title="Info Detail"/>
                                 </td>
                             </tr>
                         ))}
