@@ -6,7 +6,7 @@ const SimpleCard = (props) => {
         <div className={props.bgColor+" w-80 h-36 rounded "}>
             <div className="p-6">
                 <div>
-                    <h3 className="text-base font-medium text-gray-500">
+                    <h3 className="text-base font-semibold text-gray-500">
                         {props.Title}
                     </h3>
                 </div>

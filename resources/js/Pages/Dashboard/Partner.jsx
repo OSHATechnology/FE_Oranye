@@ -29,7 +29,7 @@ const Partner = () => {
                 Keterangan="Partner From PT.OSHA Technology"
             />
 
-            <div className="flex justify-center mt-16 mb-2">
+            <div className="flex justify-center mt-8 mb-2">
                 <div className="justify-between items-center md:min-h-1/3 md:flex md:flex-row md:w-full">
                     <div className="">
                         <ButtonNormal bgIcon="bg-green-600 " text="Add" icon="bi:plus" />
@@ -38,7 +38,7 @@ const Partner = () => {
                         <input
                             type="text"
                             placeholder="Search"
-                            className="rounded text-center w-72"
+                            className="rounded border border-gray-300 h-9 text-center w-72"
                         />
                         <ButtonSmall
                             bgIcon="bg-gray-400"

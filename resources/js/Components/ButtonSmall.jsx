@@ -4,7 +4,7 @@ import { Icon } from "@iconify/react";
 const ButtonSmall = (props) => {
     return (
         <div>
-            <button className={props.bgIcon +" rounded p-2"}>
+            <button onClick={props.onClick} className={props.bgIcon +" rounded p-2"}>
                 <Icon icon={props.icon} className={props.colorIcon + " text-xl"}></Icon>
             </button>
         </div>

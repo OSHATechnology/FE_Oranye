@@ -1,29 +1,25 @@
-import React, {useState } from "react";
-import { Icon } from "@iconify/react";
+import React,{ Fragment, useState } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
+import { Icon } from '@iconify/react'
 
-const Modal_Emp_Attendance = () => {
-    let [isOpen, setIsOpen] = useState(true)
-
-    function closeModal() {
-        setIsOpen(false)
-    }
-
-    function openModal() {
-        setIsOpen(true)
-    }
-    return (
-        
-        <div className="flex justify-center items-center rounded-lg">
-            {/* <div class="relative h-32 w-32">
-                <div class="absolute -top-4 -right-80 h-16 w-16">
-                    <Icon icon="eva:close-outline" className="text-lg text-gray-500" />
+const Modal = ({ isOpen, setIsOpen }) => {
+  return (
+    <>
+    
+        <Dialog
+                open={isOpen}
+                onClose={setIsOpen}
+                as="div"
+                className={"fixed inset-0 z-10 flex items-center justify-center overflow-y-auto bg-gray-800/50"}
+            >
+                
+                <div className="items-start bg-white min-h-1-2 w-72 border-2 rounded space-y-4">
+                <button
+                        className=" float-right"
+                        onClick={() => setIsOpen(false)}
+                    > <Icon icon="eva:close-outline" className="text-lg text-gray-500 " />
+                    </button>
                     
-                </div>
-            </div> */}
-
-            <div className="items-start min-h-1-2 w-72 border-2 rounded space-y-4">
-                    <Icon icon="eva:close-outline" className="text-lg text-gray-500 float-right " />
                 <div className="text-center text-base font-bold">
                     Detail
                 </div>
@@ -57,8 +53,10 @@ const Modal_Emp_Attendance = () => {
                     </table>
                 </div>
             </div>
-        </div>
-    );
-};
+        </Dialog>
 
-export default Modal_Emp_Attendance;
+    </>
+  )
+}
+
+export default Modal

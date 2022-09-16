@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import { Icon } from "@iconify/react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const Sidebar = () => {
     const [isActive, setActive] = useState(false);
-
+    
+    const location = useLocation();
     const handleToggle = () => {
         setActive(!isActive);
     };
@@ -15,7 +16,7 @@ const Sidebar = () => {
             id: 1,
             icon: "ic:round-space-dashboard",
             title: "Dashboard",
-            link: "Dashboard",
+            link: "dashboard",
             isActive: false,
             classAddon: "",
         },
@@ -23,7 +24,7 @@ const Sidebar = () => {
             id: 2,
             icon: "fa-solid:user-cog",
             title: "Role & Permissions",
-            link: "Role",
+            link: "role",
             isActive: false,
             classAddon: "",
         },
@@ -31,7 +32,7 @@ const Sidebar = () => {
             id: 3,
             icon: "fa6-regular:calendar-check",
             title: "Attendance",
-            link: "Hadir",
+            link: "hadir",
             isActive: false,
             classAddon: "",
         },
@@ -39,7 +40,7 @@ const Sidebar = () => {
             id: 4,
             icon: "bxs:user",
             title: "Employee",
-            link: "Emp",
+            link: "emp",
             isActive: false,
             classAddon: "",
         },
@@ -47,7 +48,7 @@ const Sidebar = () => {
             id: 5,
             icon: "fa-solid:users",
             title: "Partner",
-            link: "Mitra",
+            link: "mitra",
             isActive: false,
             classAddon: "",
         },
@@ -68,8 +69,8 @@ const Sidebar = () => {
                     (isActive ? "hidden" : "")
                 }
             >
-                <div class="text-gray-800 text-xl">
-                    <div class="p-2.5 mt-1 flex items-center justify-between">
+                <div className="text-gray-800 text-xl">
+                    <div className="p-2.5 mt-1 flex items-center justify-between">
                         <div className="flex items-center justify-center text-center">
 
                             <img src="assets/Logo.png" alt="" className="w-32"/>
@@ -91,7 +92,7 @@ const Sidebar = () => {
                     <Link to={item.link} key={item.id}
                         className={
                                 "p-2.5 mt-6 flex items-center rounded-md px-4 duration-300 cursor-pointer text-gray-800  hover:bg-gray-200 " +
-                                (item.isActive ? "bg-gray-800 text-white" : "")
+                                ((location.pathname == '/'+item.link) ? "bg-gray-200 text-white" : "")
                             }
                         >   
                         <Icon icon={item.icon} className="text-xl mr-1" />

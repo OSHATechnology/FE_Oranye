@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import TitleDashboard from "@/Components/TitleDashboard";
 import ButtonSmall from "@/Components/ButtonSmall";
 import ButtonNormal from "@/Components/ButtonNormal";
+import Modal from "@/Components/Modal/Modal";
 
 const Employee = () => {
+    const [isOpen, setIsOpen] = useState(false)
     const dataEmp = [
         // Pages
         {
@@ -28,7 +30,7 @@ const Employee = () => {
                 Keterangan="Employees From PT.OSHA Technology"
             />
 
-            <div className="flex justify-center mt-16 mb-2">
+            <div className="flex justify-center mt-8 mb-2">
                 <div className="justify-between items-center md:min-h-1/3 md:flex md:flex-row md:w-full">
                     <div className="flex gap-4">
                         <ButtonNormal bgIcon="bg-green-600 " icon="bi:plus" text="Add" />
@@ -38,7 +40,7 @@ const Employee = () => {
                         <input
                             type="text"
                             placeholder="Search"
-                            className="rounded text-center w-72"
+                            className="rounded text-center w-72 border border-gray-300 h-9"
                         />
                         <ButtonSmall
                             bgIcon="bg-gray-400"
@@ -94,7 +96,13 @@ const Employee = () => {
                                                 bgIcon="bg-red-500"
                                                 icon="ci:trash-full"
                                                 colorIcon="text-white"
+                                                onClick={() => setIsOpen(!isOpen)}
                                             />
+                                            <button className="w-64 inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-indigo-600 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:ml-3 sm:w-auto sm:text-sm"
+                                                    onClick={() => setIsOpen(!isOpen)}>
+					Open Modal
+				</button>
+                <Modal isOpen={isOpen} setIsOpen={setIsOpen} />
                                         </div>
                                     </td>
                                 </tr>
